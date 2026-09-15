@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-primary: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  html[dir="rtl"] {
+    --font-primary: 'Vazirmatn', system-ui, sans-serif;
+    font-family: var(--font-primary);
+  }
+
+  html[dir="ltr"] {
+    --font-primary: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    font-family: var(--font-primary);
+  }
+
+  body {
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(123, 136, 215, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 136, 215, 0.6);
+}
+
+/* Shimmer animation for image loading skeletons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.1) 37%,
+    rgba(255, 255, 255, 0.03) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+.light .skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.08) 37%,
+    rgba(0, 0, 0, 0.04) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* Glassmorphic border utilities */
+.glass-border-light {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-border-dark {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Vertical Text utility */
+.writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}

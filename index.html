@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="fa" dir="rtl" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Social Meta Tags -->
+    <title>یوسف فیضی — مهندس نرم‌افزار و توسعه‌دهنده وب | Yousef Feizi</title>
+    <meta name="description" content="پورتفولیو و رزومه رسمی یوسف فیضی، مهندس نرم‌افزار ۳۰ ساله، متخصص وب با Laravel, React, WordPress, WooCommerce, PHP, Python و Tailwind CSS." />
+    <meta name="author" content="یوسف فیضی - Yousef Feizi" />
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Vazirmatn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              bento: {
+                bg: '#EAECEF',
+                surface: '#FFFFFF',
+                lavender: '#7B88D7',
+                mint: '#9FE3DB',
+                violet: '#8C79C8',
+                amber: '#F5BF62',
+                charcoal: '#323639',
+                pink: '#ED5199',
+                dark: {
+                  bg: '#0A0D14',
+                  surface: '#111622',
+                  card: '#161B2A',
+                  hover: '#1E2438',
+                  border: 'rgba(255, 255, 255, 0.08)',
+                  accent: '#818CF8'
+                }
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+              persian: ['Vazirmatn', 'Tahoma', 'sans-serif'],
+            },
+            boxShadow: {
+              'bento': '0 20px 40px -15px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(0, 0, 0, 0.04)',
+              'bento-dark': '0 20px 50px -15px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08)',
+              'glow-pink': '0 0 25px rgba(237, 81, 153, 0.45)',
+              'glow-lavender': '0 0 35px rgba(123, 136, 215, 0.4)',
+            },
+            animation: {
+              'spin-slow': 'spin 18s linear infinite',
+              'pulse-subtle': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      :root {
+        --font-primary: 'Vazirmatn', system-ui, sans-serif;
+      }
+      html[dir="rtl"] {
+        --font-primary: 'Vazirmatn', system-ui, sans-serif;
+        font-family: var(--font-primary);
+      }
+      html[dir="ltr"] {
+        --font-primary: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+        font-family: var(--font-primary);
+      }
+      body {
+        font-family: var(--font-primary);
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: rgba(123, 136, 215, 0.3); border-radius: 9999px; }
+      ::-webkit-scrollbar-thumb:hover { background: rgba(123, 136, 215, 0.6); }
+
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .skeleton-shimmer {
+        background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.1) 37%, rgba(255,255,255,0.03) 63%);
+        background-size: 200% 100%;
+        animation: shimmer 1.6s infinite linear;
+      }
+      .light .skeleton-shimmer {
+        background: linear-gradient(90deg, rgba(0,0,0,0.04) 25%, rgba(0,0,0,0.08) 37%, rgba(0,0,0,0.04) 63%);
+        background-size: 200% 100%;
+        animation: shimmer 1.6s infinite linear;
+      }
+    </style>
+  </head>
+  <body class="bg-bento-bg dark:bg-bento-dark-bg text-neutral-900 dark:text-neutral-100 transition-colors duration-300 antialiased selection:bg-bento-lavender selection:text-white">
+    
+    <!-- Top Floating Navbar -->
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
+      <nav class="flex items-center justify-between gap-4 py-3 px-4 sm:px-6 rounded-3xl bg-white/75 dark:bg-[#121622]/80 backdrop-blur-xl border border-neutral-200/80 dark:border-white/10 shadow-sm transition-all duration-300">
+        
+        <!-- Left: Brand & Availability Status -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-2xl bg-gradient-to-tr from-bento-lavender to-bento-pink flex items-center justify-center text-white shadow-md shadow-bento-lavender/30">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z"/></svg>
+          </div>
+          <div class="flex flex-col">
+            <span id="nav-brand-name" class="text-sm font-bold tracking-tight text-neutral-900 dark:text-white">
+              یوسف فیضی
+            </span>
+            <span class="flex items-center gap-1.5 text-[11px] font-medium text-emerald-600 dark:text-emerald-400">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span id="nav-status">آماده همکاری در پروژه‌ها</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Center: Shortcuts -->
+        <div class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100/80 dark:bg-white/5 border border-neutral-200/60 dark:border-white/5 text-xs font-semibold text-neutral-600 dark:text-neutral-300">
+          <a href="#bento-grid" id="link-portfolio" class="px-3 py-1 rounded-full hover:text-bento-lavender dark:hover:text-white transition-colors">نمونه‌کارها</a>
+          <a href="#skills" id="link-skills" class="px-3 py-1 rounded-full hover:text-bento-lavender dark:hover:text-white transition-colors">مهارت‌ها</a>
+          <a href="#projects" id="link-projects" class="px-3 py-1 rounded-full hover:text-bento-lavender dark:hover:text-white transition-colors">سایت‌های فعال</a>
+        </div>
+
+        <!-- Right: Controls (Lang, Theme, Email CTA) -->
+        <div class="flex items-center gap-2.5">
+          <!-- Language Toggle -->
+          <div class="flex items-center gap-1 p-1 rounded-full bg-neutral-200/70 dark:bg-white/10 backdrop-blur-md border border-neutral-300/60 dark:border-white/10 text-xs font-semibold shadow-sm">
+            <button id="btn-lang-en" onclick="setLang('en')" class="px-2.5 py-1 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors">EN</button>
+            <button id="btn-lang-fa" onclick="setLang('fa')" class="px-2.5 py-1 rounded-full bg-bento-lavender text-white shadow-sm transition-colors">فا</button>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button onclick="toggleTheme()" aria-label="Toggle Theme" class="relative flex items-center justify-center p-2 rounded-full transition-all duration-300 bg-neutral-200/70 hover:bg-neutral-300/80 dark:bg-white/10 dark:hover:bg-white/15 text-neutral-700 dark:text-neutral-200 shadow-sm backdrop-blur-md border border-neutral-300/60 dark:border-white/10">
+            <span id="theme-icon">
+              <!-- Moon icon (Dark Mode default) -->
+              <svg class="w-4 h-4 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </span>
+          </button>
+
+          <!-- Contact Email Button -->
+          <a href="mailto:feizi.yousef@gmail.com" class="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-white bg-bento-charcoal hover:bg-neutral-800 dark:bg-bento-lavender dark:hover:bg-indigo-500 shadow-sm transition-all duration-200">
+            <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span id="nav-contact">ارتباط با من</span>
+          </a>
+        </div>
+
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-start w-full">
+      
+      <!-- Bento Grid (Replicating Reference Image Exactly) -->
+      <section id="bento-grid" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="relative rounded-[2.8rem] sm:rounded-[3.5rem] bg-white dark:bg-[#111522] border border-neutral-200/90 dark:border-white/10 p-5 sm:p-8 lg:p-10 shadow-bento dark:shadow-bento-dark transition-colors duration-300">
+          
+          <!-- Top Row: About Me & Giant Portfolio Typography with Corner Mark ⌝ -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 sm:pb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-100 dark:bg-white/5 border border-neutral-200/80 dark:border-white/10 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-neutral-200 shadow-sm">
+              <svg class="w-3.5 h-3.5 text-bento-lavender fill-current" viewBox="0 0 24 24"><path d="M12 2L14.4 8.6L21 11L14.4 13.4L12 20L9.6 13.4L3 11L9.6 8.6L12 2Z"/></svg>
+              <span id="label-about-me">درباره من</span>
+            </div>
+
+            <div class="flex items-baseline gap-2 select-none">
+              <h1 id="title-portfolio" class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-neutral-900 dark:text-white uppercase leading-none">
+                PORTFOLIO
+              </h1>
+              <span class="text-2xl sm:text-4xl font-light text-neutral-400 dark:text-neutral-500 leading-none">⌝</span>
+            </div>
+          </div>
+
+          <!-- Grid Assembly -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
+            
+            <!-- Left Column: SidebarNav + Hero Profile Card -->
+            <div class="lg:col-span-5 flex flex-col sm:flex-row gap-3">
+              
+              <!-- Vertical Sidebar Navigation (matching reference) -->
+              <aside class="hidden lg:flex flex-col items-center justify-center gap-6 py-6 px-2 text-xs font-semibold text-neutral-400 dark:text-neutral-500 select-none">
+                <a href="#clients" style="writing-mode: vertical-rl; transform: rotate(180deg);" class="tracking-wider text-[11px] hover:text-neutral-900 dark:hover:text-white transition-colors">مشتریان</a>
+                <a href="#skills" style="writing-mode: vertical-rl; transform: rotate(180deg);" class="tracking-wider text-[11px] hover:text-neutral-900 dark:hover:text-white transition-colors">مهارت‌ها</a>
+                <a href="#bento-grid" style="writing-mode: vertical-rl; transform: rotate(180deg);" class="tracking-wider text-[11px] text-neutral-900 dark:text-white font-bold transition-colors">نمونه‌کارها</a>
+                <a href="#projects" style="writing-mode: vertical-rl; transform: rotate(180deg);" class="tracking-wider text-[11px] hover:text-neutral-900 dark:hover:text-white transition-colors">سایت‌ها</a>
+              </aside>
+
+              <!-- Hero Profile Card -->
+              <div class="flex-1 relative flex flex-col justify-between overflow-hidden rounded-[2.2rem] bg-bento-lavender dark:bg-[#1E2238] dark:border dark:border-indigo-500/20 text-white p-7 sm:p-8 shadow-bento dark:shadow-bento-dark min-h-[480px] md:min-h-[540px] transition-all duration-300 hover:shadow-glow-lavender/30 group">
+                
+                <!-- Glow decor -->
+                <div class="absolute -top-24 -right-24 w-60 h-60 rounded-full bg-white/10 dark:bg-indigo-500/10 blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -left-20 w-48 h-48 rounded-full bg-bento-pink/20 blur-2xl pointer-events-none"></div>
+
+                <!-- Top Avatar Holder with Exact Concentric Rings & User's Photo -->
+                <div class="relative flex items-center justify-center pt-2 pb-5">
+                  <div class="relative flex items-center justify-center">
+                    
+                    <!-- Outer Glowing Ring -->
+                    <div class="absolute -inset-2.5 rounded-full bg-gradient-to-tr from-bento-pink via-white to-indigo-200 opacity-90 blur-[1px] animate-pulse-subtle"></div>
+
+                    <!-- Inner Magenta Ring (#ED5199) from Reference Photo -->
+                    <div class="relative w-44 h-44 sm:w-48 sm:h-48 rounded-full p-[5px] bg-gradient-to-b from-[#ED5199] to-[#D83685] shadow-glow-pink">
+                      
+                      <!-- White separator ring -->
+                      <div class="w-full h-full rounded-full p-1 bg-white dark:bg-[#1E2238] overflow-hidden">
+                        
+                        <!-- Portrait Image Container with Vibrant Magenta Background from Reference -->
+                        <div class="w-full h-full rounded-full overflow-hidden bg-[#ED5199] relative group-hover:scale-105 transition-transform duration-500 flex items-center justify-center">
+                          <img
+                            src="./assets/avatar.png"
+                            alt="یوسف فیضی — مهندس نرم‌افزار"
+                            class="w-full h-full object-cover object-[center_12%] contrast-125 brightness-105"
+                            style="mix-blend-mode: multiply; filter: grayscale(100%) contrast(130%);"
+                            onerror="this.src='./public/assets/avatar.png'"
+                          />
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <!-- Bottom Section: Name, Role & Spinning Badge -->
+                <div class="relative z-10 flex items-end justify-between gap-3 mt-auto">
+                  
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2 mb-1">
+                      <span id="hero-greeting" class="text-xl sm:text-2xl font-medium tracking-tight text-white/90">من،</span>
+                      <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white/15 backdrop-blur-md text-[10px] font-semibold text-white/90">
+                        ۳۰ ساله • ۹ آبان ۱۳۷۴
+                      </span>
+                    </div>
+
+                    <h2 id="hero-name" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                      یوسف فیضی
+                    </h2>
+
+                    <p id="hero-role" class="text-xs sm:text-sm font-semibold text-white/90 mt-1 max-w-[220px] sm:max-w-[250px] leading-snug">
+                      مهندس نرم‌افزار و توسعه‌دهنده وب
+                    </p>
+
+                    <!-- Email Chip with Copy Toast -->
+                    <div class="mt-4 pt-3 border-t border-white/20 border-dashed">
+                      <button onclick="copyEmail()" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/20 hover:bg-black/35 backdrop-blur-md border border-white/25 text-xs text-white transition-all duration-200">
+                        <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <span class="font-mono text-[11px] sm:text-xs">feizi.yousef@gmail.com</span>
+                        <span id="copy-feedback" class="text-[10px] text-white/70">↗</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Spinning Vinyl Badge -->
+                  <div class="relative flex-shrink-0 mb-1">
+                    <div class="relative w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
+                      <div class="absolute inset-0 w-full h-full animate-spin-slow">
+                        <svg viewBox="0 0 100 100" class="w-full h-full fill-white">
+                          <defs>
+                            <path id="badgeCirclePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
+                          </defs>
+                          <text class="text-[8.5px] font-bold tracking-[0.18em] uppercase">
+                            <textPath href="#badgeCirclePath" startOffset="0%">
+                              YOUSEF FEIZI • SOFTWARE ENGINEER • 1374 • 
+                            </textPath>
+                          </text>
+                        </svg>
+                      </div>
+
+                      <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-neutral-900 border border-white/30 flex flex-col items-center justify-center text-white shadow-inner relative z-10">
+                        <span class="text-[8.5px] font-extrabold tracking-wider text-white">۱۳۷۴</span>
+                        <div class="w-1.5 h-1.5 rounded-full bg-white mt-0.5"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Right Column: Showcase Card, Stats, Clients & 3D Art -->
+            <div class="lg:col-span-7 flex flex-col justify-between gap-5 sm:gap-6">
+              
+              <!-- Top Row: Showcase Card + Stacked Mint & Violet Stats -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+                
+                <!-- Showcase Card (Span 2) -->
+                <div onclick="openDemoModal()" class="relative sm:col-span-2 overflow-hidden rounded-[2.2rem] bg-[#A2D9D2] dark:bg-[#132B2B] shadow-bento dark:shadow-bento-dark min-h-[260px] sm:min-h-[290px] cursor-pointer group select-none border border-transparent dark:border-emerald-500/20">
+                  <div class="absolute inset-0 overflow-hidden">
+                    <img
+                      src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&q=80"
+                      alt="Flamingo Papercraft Showcase"
+                      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out brightness-95 contrast-105"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent dark:from-black/85 dark:via-black/40"></div>
+                  </div>
+
+                  <!-- Corner Mark ⌝ -->
+                  <div class="absolute top-5 right-5 z-20">
+                    <div class="w-8 h-8 rounded-full bg-white/30 dark:bg-black/40 backdrop-blur-md flex items-center justify-center text-white border border-white/40 group-hover:rotate-45 transition-transform">
+                      ↗
+                    </div>
+                  </div>
+
+                  <!-- Frosted Play Button -->
+                  <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                    <div class="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/70 dark:bg-white/20 backdrop-blur-xl border border-white/60 shadow-2xl group-hover:scale-110 transition-transform">
+                      <svg class="w-6 h-6 text-neutral-900 dark:text-white fill-current ml-1" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Info -->
+                  <div class="absolute bottom-5 left-6 right-6 z-20 flex items-end justify-between">
+                    <div class="flex flex-col text-white">
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-pink-300">سامانه فروشگاهی و شرکتی</span>
+                      <h3 class="text-lg sm:text-xl font-bold drop-shadow mt-0.5">اکوسیستم گجت ایران، بخشی و مل‌تک</h3>
+                      <p class="hidden sm:block text-xs text-white/80 max-w-sm mt-0.5">توسعه پلتفرم‌های پرسرعت فروشگاهی و سازمانی آنلاین</p>
+                    </div>
+                    <span class="hidden sm:inline-flex px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-semibold text-white border border-white/30">
+                      مشاهده پیش‌نمایش
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Stacked Mint & Violet Stats (Span 1) -->
+                <div class="flex flex-col gap-4 sm:gap-5 justify-between">
+                  <!-- Mint Card -->
+                  <div class="relative flex flex-col justify-between p-6 rounded-[2rem] bg-[#9FE3DB] dark:bg-[#123630] text-neutral-900 dark:text-emerald-100 shadow-bento dark:shadow-bento-dark group select-none">
+                    <div class="flex justify-end">
+                      <div class="w-7 h-7 rounded-full bg-white/40 dark:bg-emerald-950/50 flex items-center justify-center">↗</div>
+                    </div>
+                    <div class="mt-4">
+                      <span class="text-4xl sm:text-5xl font-black leading-none">۹+</span>
+                      <h4 class="text-sm font-semibold mt-1">سایت فعال و آنلاین</h4>
+                    </div>
+                  </div>
+
+                  <!-- Violet Card -->
+                  <div class="relative flex flex-col justify-between p-6 rounded-[2rem] bg-[#8C79C8] dark:bg-[#281B3F] text-white shadow-bento dark:shadow-bento-dark group select-none">
+                    <div class="flex justify-end">
+                      <div class="w-7 h-7 rounded-full bg-white/25 dark:bg-purple-950/50 flex items-center justify-center">↗</div>
+                    </div>
+                    <div class="mt-4">
+                      <span class="text-4xl sm:text-5xl font-black leading-none">۱۰+</span>
+                      <h4 class="text-sm font-semibold mt-1">مهارت و ابزار تخصصی</h4>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Bottom Row: Charcoal Clients Card + Combined 3D Art & Amber Awards -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+                
+                <!-- Clients Card with Domain Switcher (Span 1) -->
+                <div onclick="cycleClient()" class="relative flex flex-col justify-between p-6 sm:p-7 rounded-[2rem] bg-bento-charcoal dark:bg-[#151922] text-white shadow-bento dark:shadow-bento-dark border border-neutral-700/40 dark:border-white/10 group cursor-pointer select-none min-h-[190px]">
+                  <div class="flex justify-end">
+                    <div class="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-white/80 group-hover:rotate-45 transition-transform">↗</div>
+                  </div>
+                  <div class="flex flex-col items-center justify-center my-auto py-2">
+                    <span id="client-domain-icon" class="text-3xl">🛒</span>
+                    <span id="client-domain-name" class="text-sm font-mono text-neutral-200 mt-2 font-bold">gadgetiran.com</span>
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <h4 class="text-sm font-semibold text-white/90">مشتریان و همکاران</h4>
+                    <span id="client-brand-name" class="text-[10px] uppercase font-mono text-neutral-400">گجت ایران</span>
+                  </div>
+                </div>
+
+                <!-- Combined 3D Ribbon Sphere + Amber Card (Span 2) -->
+                <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 rounded-[2.2rem] overflow-hidden shadow-bento dark:shadow-bento-dark border border-neutral-200/50 dark:border-white/10">
+                  <!-- 3D Sculpture Half -->
+                  <div class="relative flex items-center justify-center p-6 bg-black dark:bg-[#0D1017] min-h-[190px] overflow-hidden">
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 animate-spin-slow">
+                      <svg viewBox="0 0 160 160" class="w-full h-full drop-shadow-[0_10px_20px_rgba(100,140,255,0.3)]">
+                        <circle cx="80" cy="80" r="62" fill="none" stroke="#818CF8" stroke-width="8" stroke-dasharray="320" opacity="0.9" />
+                        <path d="M30 80 Q55 30 80 80 T130 80" fill="none" stroke="#F472B6" stroke-width="10" stroke-linecap="round" />
+                        <ellipse cx="80" cy="80" rx="46" ry="26" transform="rotate(35 80 80)" fill="none" stroke="#38BDF8" stroke-width="8" />
+                        <circle cx="80" cy="80" r="14" fill="#E0E7FF" opacity="0.85" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Amber Card Half -->
+                  <div class="relative flex flex-col justify-between p-6 sm:p-7 bg-[#F5BF62] dark:bg-[#3D2E14] text-neutral-900 dark:text-amber-100 select-none min-h-[190px]">
+                    <div class="flex justify-end">
+                      <div class="w-7 h-7 rounded-full bg-black/15 dark:bg-amber-950/60 flex items-center justify-center">↗</div>
+                    </div>
+                    <div class="mt-4">
+                      <span class="text-4xl sm:text-5xl font-black leading-none">۳۰</span>
+                      <h4 class="text-sm sm:text-base font-bold mt-1">سال سن و تخصص فنی</h4>
+                      <p class="text-[11px] text-neutral-800/80 dark:text-amber-300/80 mt-1 max-w-[200px] leading-tight">
+                        متولد ۹ آبان ۱۳۷۴ — کارشناس مهندسی نرم‌افزار و توسعه‌دهنده سیستم‌های وب.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Skills Bento Section -->
+      <section id="skills" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="rounded-[2.5rem] bg-white dark:bg-[#111522] border border-neutral-200/90 dark:border-white/10 p-6 sm:p-10 shadow-bento dark:shadow-bento-dark transition-colors duration-300">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-8 border-b border-neutral-200/60 dark:border-white/5">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-bento-lavender/10 text-bento-lavender text-xs font-bold uppercase tracking-wider mb-2">
+                <span>استک تخصصی</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-neutral-900 dark:text-white">
+                مهارت‌ها و فناوری‌های مسلط
+              </h2>
+              <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-1.5 max-w-xl">
+                مسلط به پیاده‌سازی فرانت‌اند پیشرفته، معماری بک‌اند و پایگاه داده، و سیستم‌های مدیریت محتوای سازمانی
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-semibold text-neutral-500 dark:text-neutral-400">
+              <span class="px-3 py-1 rounded-full bg-neutral-100 dark:bg-white/5 border border-neutral-200/50">
+                مهندسی نرم‌افزار • ۳۰ ساله
+              </span>
+            </div>
+          </div>
+
+          <!-- Skills Cards Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4 pt-8">
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">⚛️</span><span class="text-[10px] font-mono text-neutral-400">Frontend</span></div>
+              <h4 class="font-bold text-sm sm:text-base">React</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Advanced</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🎨</span><span class="text-[10px] font-mono text-neutral-400">Frontend</span></div>
+              <h4 class="font-bold text-sm sm:text-base">Tailwind CSS</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Advanced</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🔴</span><span class="text-[10px] font-mono text-neutral-400">Backend</span></div>
+              <h4 class="font-bold text-sm sm:text-base">Laravel</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Advanced</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🐘</span><span class="text-[10px] font-mono text-neutral-400">Backend</span></div>
+              <h4 class="font-bold text-sm sm:text-base">PHP</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Expert</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🐍</span><span class="text-[10px] font-mono text-neutral-400">Backend</span></div>
+              <h4 class="font-bold text-sm sm:text-base">Python</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Proficient</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🛒</span><span class="text-[10px] font-mono text-neutral-400">CMS</span></div>
+              <h4 class="font-bold text-sm sm:text-base">WooCommerce</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Expert</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🌐</span><span class="text-[10px] font-mono text-neutral-400">CMS</span></div>
+              <h4 class="font-bold text-sm sm:text-base">WordPress</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Expert</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">📄</span><span class="text-[10px] font-mono text-neutral-400">Frontend</span></div>
+              <h4 class="font-bold text-sm sm:text-base">HTML5 & CSS3</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Expert</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">🗄️</span><span class="text-[10px] font-mono text-neutral-400">Database</span></div>
+              <h4 class="font-bold text-sm sm:text-base">MySQL</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Advanced</span>
+            </div>
+            <div class="p-4 sm:p-5 rounded-2xl bg-neutral-50 dark:bg-[#161B28] border border-neutral-200/70 dark:border-white/5 hover:border-bento-lavender/50 transition-all">
+              <div class="flex justify-between items-center mb-2"><span class="text-xl">⚡</span><span class="text-[10px] font-mono text-neutral-400">Architecture</span></div>
+              <h4 class="font-bold text-sm sm:text-base">REST API</h4>
+              <span class="text-[11px] text-emerald-500 font-medium">Advanced</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 Real Websites Showcase Section -->
+      <section id="projects" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-bento-lavender/10 text-bento-lavender text-xs font-bold uppercase tracking-wider mb-2">
+              <span>ویترین کارها</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
+              سایت‌های اجرا شده و فعال
+            </h2>
+            <p class="text-sm sm:text-base text-neutral-500 dark:text-neutral-400 mt-2 max-w-xl">
+              مجموعه پروژه‌های آنلاین با اسکرین‌شات زنده و دسترسی مستقیم به وب‌سایت‌ها
+            </p>
+          </div>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Populated by JavaScript -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-neutral-200/60 dark:border-white/5 mt-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500 dark:text-neutral-400">
+        <div>طراحی و توسعه توسط یوسف فیضی با معماری بنتو گرید مدرن.</div>
+        <div class="flex items-center gap-4">
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[11px] font-semibold">
+            GitHub Pages Ready
+          </span>
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-2 rounded-full bg-neutral-100 dark:bg-white/5 hover:bg-neutral-200 dark:hover:bg-white/10 text-neutral-700 dark:text-neutral-300">
+            ↑
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Interactive Project Modal -->
+    <div id="modal-container" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div onclick="closeModal()" class="fixed inset-0 bg-black/70 backdrop-blur-md"></div>
+      <div class="relative w-full max-w-3xl overflow-hidden rounded-[2.5rem] bg-white dark:bg-[#151924] border border-neutral-200 dark:border-white/10 shadow-2xl z-10 my-8">
+        <button onclick="closeModal()" class="absolute top-5 right-5 z-30 p-2.5 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-md">✕</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+      const projects = [
+        {
+          id: "gadgetiran",
+          title: "گجت ایران — فروشگاه تخصصی گجت‌های هوشمند",
+          titleEn: "Gadget Iran — Smart Tech Marketplace",
+          desc: "پلتفرم فروشگاهی جامع کالای دیجیتال و گجت‌های هوشمند با سرعت بارگذاری فوق‌العاده و درگاه پرداخت امن.",
+          descEn: "Electronics e-commerce platform with automated inventory, dynamic filtering, and secure checkout.",
+          liveUrl: "https://gadgetiran.com",
+          tags: ["WooCommerce", "WordPress", "PHP", "Tailwind CSS"],
+          category: "E-Commerce",
+          stats: "Top Tech Store"
+        },
+        {
+          id: "bakhshi-shop",
+          title: "فروشگاه بخشی — پلتفرم فروش آنلاین محصولات",
+          titleEn: "Bakhshi Shop — Modern E-Commerce",
+          desc: "فروشگاه اینترنتی مدرن با تجربه کاربری روان، انبارداری هوشمند و فرآیند خرید بهینه.",
+          descEn: "High-conversion online store designed for seamless product discovery and fast fulfillment.",
+          liveUrl: "https://bakhshi.shop",
+          tags: ["WooCommerce", "WordPress", "PHP", "CSS3"],
+          category: "E-Commerce",
+          stats: "High Conversion"
+        },
+        {
+          id: "melltech",
+          title: "مل‌تک — راهکارهای فناوری و خدمات مهندسی",
+          titleEn: "Melltech — Enterprise IT Solutions",
+          desc: "پورتال شرکتی و سازمانی مل‌تک جهت ارائه خدمات پیشرفته نرم‌افزاری و شبکه.",
+          descEn: "Corporate technology platform engineered for high reliability and enterprise services.",
+          liveUrl: "https://melltech.co",
+          tags: ["Laravel", "PHP", "Tailwind CSS", "MySQL"],
+          category: "Web App",
+          stats: "Enterprise Ready"
+        },
+        {
+          id: "manestar",
+          title: "مانستار — برند و محصولات مانستار",
+          titleEn: "Manestar — Lifestyle & Retail Brand",
+          desc: "پورتال اختصاصی برند با طراحی چشم‌نواز و تجربه کاربری بهینه‌سازی شده برای سئو.",
+          descEn: "Modern lifestyle and commercial web portal with responsive layouts and high SEO score.",
+          liveUrl: "https://manestar.ir",
+          tags: ["WordPress", "WooCommerce", "PHP", "CSS3"],
+          category: "E-Commerce",
+          stats: "99% SEO"
+        },
+        {
+          id: "tamiratoos",
+          title: "تعمیراتوس — سامانه خدمات فنی و پیگیری سفارشات",
+          titleEn: "Tamiratoos — Technical Support Portal",
+          desc: "سامانه هوشمند نوبت‌دهی آنلاین خدمات و پیگیری آنلاین وضعیت تعمیرات دستگاه‌ها.",
+          descEn: "Specialized service booking and technical repairs portal offering real-time status tracking.",
+          liveUrl: "https://tamiratoos.com",
+          tags: ["Laravel", "PHP", "Python", "MySQL"],
+          category: "Web App",
+          stats: "Order Tracking"
+        },
+        {
+          id: "barvaran",
+          title: "باروران — سامانه صنعتی و کشاورزی",
+          titleEn: "Barvaran — Agro-Industrial Enterprise",
+          desc: "پورتال تخصصی معرفی محصولات صنعتی، کاتالوگ آنلاین و کانال‌های ارتباطی B2B.",
+          descEn: "B2B commercial web portal showcasing industrial products and technical specs.",
+          liveUrl: "https://barvaran.ir",
+          tags: ["WordPress", "PHP", "HTML5", "Bootstrap"],
+          category: "Corporate",
+          stats: "B2B Commercial"
+        },
+        {
+          id: "niktal",
+          title: "نیک‌تال — سامانه خدمات دیجیتال و وب",
+          titleEn: "Niktal — Digital Agency Portal",
+          desc: "پورتال شرکتی ارائه خدمات توسعه نرم‌افزار، طراحی وب و راهکارهای نوآورانه.",
+          descEn: "Dynamic agency portal delivering customized web solutions and software services.",
+          liveUrl: "https://niktal.com",
+          tags: ["React", "Laravel", "Tailwind CSS"],
+          category: "Corporate",
+          stats: "Modern Stack"
+        },
+        {
+          id: "clickerr",
+          title: "کلیکر — خدمات بازاریابی و تبلیغات دیجیتال",
+          titleEn: "Clickerr — Performance Marketing",
+          desc: "پلتفرم ارائه خدمات تبلیغات کلیکی، سئو، افزایش نرخ تبدیل و تحلیل داده‌های مارکتینگ.",
+          descEn: "Interactive conversion-focused digital marketing portal engineered for high user engagement.",
+          liveUrl: "https://clickerr.ir",
+          tags: ["Python", "PHP", "WordPress", "Analytics"],
+          category: "Web App",
+          stats: "Data-Driven"
+        },
+        {
+          id: "irancomedi",
+          title: "ایران کمدی — رسانه سرگرمی و ویدیویی",
+          titleEn: "Iran Comedi — Media & Video Hub",
+          desc: "رسانه آنلاین پخش ویدیو و محتوای سرگرمی با کشینگ بهینه برای ترافیک بالا.",
+          descEn: "High-traffic media and entertainment platform featuring video catalogs and players.",
+          liveUrl: "https://irancomedi.ir",
+          tags: ["WordPress", "PHP", "HTML5", "CSS3"],
+          category: "Media",
+          stats: "High Traffic"
+        }
+      ];
+
+      // Render Projects
+      const grid = document.getElementById('projects-grid');
+      grid.innerHTML = projects.map((p, idx) => {
+        const screenshotUrl = `https://api.microlink.io?url=${encodeURIComponent(p.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`;
+        return `
+          <div class="group relative flex flex-col justify-between overflow-hidden rounded-[2.2rem] bg-white dark:bg-[#151924] border border-neutral-200/90 dark:border-white/10 shadow-bento dark:shadow-bento-dark hover:-translate-y-1 transition-all duration-300">
+            <!-- Browser Header & Screenshot -->
+            <div class="relative w-full aspect-[16/10] overflow-hidden bg-neutral-100 dark:bg-[#0D1017] border-b border-neutral-100 dark:border-white/5">
+              <div class="absolute top-0 inset-x-0 z-20 flex items-center justify-between px-4 py-2 bg-white/70 dark:bg-[#151924]/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-white/5">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-rose-400/80"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400/80"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/80"></span>
+                </div>
+                <span class="text-[10px] font-mono text-neutral-400 truncate max-w-[150px]">${p.liveUrl.replace(/^https?:\/\//, '')}</span>
+                <span class="text-[10px] font-semibold text-neutral-500">${p.stats}</span>
+              </div>
+
+              <!-- Live Screenshot Image with Shimmer Loader -->
+              <div class="w-full h-full pt-7 skeleton-shimmer relative">
+                <img
+                  src="${screenshotUrl}"
+                  alt="${p.title}"
+                  loading="lazy"
+                  class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  onload="this.parentElement.classList.remove('skeleton-shimmer')"
+                  onerror="this.parentElement.innerHTML='<div class=\\'flex flex-col items-center justify-center h-full text-neutral-400 text-xs font-bold p-4 bg-gradient-to-br from-indigo-950/20 to-pink-950/20\\'><span>${p.title}</span><span class=\\'text-[10px] font-mono mt-1 opacity-70\\'>${p.liveUrl}</span></div>'"
+                />
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex flex-col justify-between flex-1">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-bento-lavender">${p.category}</span>
+                <h3 class="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mt-1 group-hover:text-bento-lavender transition-colors">${p.title}</h3>
+                <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-300 mt-2 line-clamp-2 leading-relaxed">${p.desc}</p>
+                <div class="flex flex-wrap gap-1.5 mt-3.5">
+                  ${p.tags.map(t => `<span class="px-2.5 py-0.5 rounded-md text-[10px] font-semibold bg-neutral-100 dark:bg-white/5 text-neutral-700 dark:text-neutral-300 border border-neutral-200/50">${t}</span>`).join('')}
+                </div>
+              </div>
+
+              <div class="pt-5 mt-4 border-t border-neutral-100 dark:border-white/5 flex items-center gap-2">
+                <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-neutral-900 hover:bg-neutral-800 dark:bg-bento-lavender dark:hover:bg-indigo-500 transition-all">
+                  <span>مشاهده سایت</span>
+                  <svg class="w-3.5 h-3.5 fill-none stroke-current" viewBox="0 0 24 24" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <button onclick="openProjectModal('${p.id}')" class="p-2.5 rounded-xl bg-neutral-100 dark:bg-white/10 hover:bg-neutral-200 text-neutral-700 dark:text-white transition-colors" title="جزئیات">
+                  👁️
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Modal Logic
+      function openProjectModal(id) {
+        const p = projects.find(item => item.id === id);
+        if (!p) return;
+        const screenshotUrl = `https://api.microlink.io?url=${encodeURIComponent(p.liveUrl)}&screenshot=true&meta=false&embed=screenshot.url`;
+        document.getElementById('modal-content').innerHTML = `
+          <div class="relative aspect-[16/9] w-full bg-neutral-950 overflow-hidden">
+            <img src="${screenshotUrl}" class="w-full h-full object-cover object-top" />
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/30 to-transparent flex items-end p-6 sm:p-8">
+              <div>
+                <span class="text-xs font-bold text-bento-lavender uppercase tracking-wider">${p.category}</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">${p.title}</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 flex flex-col gap-5">
+            <div>
+              <h3 class="text-xs font-mono uppercase text-neutral-400 mb-1.5">درباره پروژه</h3>
+              <p class="text-sm sm:text-base text-neutral-700 dark:text-neutral-200 leading-relaxed">${p.desc}</p>
+            </div>
+            <div>
+              <h3 class="text-xs font-mono uppercase text-neutral-400 mb-2">تکنولوژی‌ها</h3>
+              <div class="flex flex-wrap gap-2">
+                ${p.tags.map(t => `<span class="px-3 py-1 rounded-xl text-xs font-medium bg-neutral-100 dark:bg-white/10">${t}</span>`).join('')}
+              </div>
+            </div>
+            <div class="flex items-center justify-between gap-4 pt-4 border-t border-neutral-200 dark:border-white/10">
+              <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl text-xs font-semibold text-neutral-500">بستن</button>
+              <a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold text-white bg-bento-lavender hover:bg-indigo-500">
+                <span>ورود به وب‌سایت</span>
+                ↗
+              </a>
+            </div>
+          </div>
+        `;
+        document.getElementById('modal-container').classList.remove('hidden');
+        document.getElementById('modal-container').classList.add('flex');
+      }
+
+      function openDemoModal() {
+        document.getElementById('modal-content').innerHTML = `
+          <div class="relative aspect-video w-full bg-black overflow-hidden flex items-center justify-center">
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+              <span class="text-xs font-mono uppercase tracking-widest text-pink-400">اکوسیستم فروشگاهی و سازمانی</span>
+              <h2 class="text-2xl sm:text-3xl font-black mt-1">گجت ایران و سامانه‌های وب</h2>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8">
+            <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              توسعه انواع فروشگاه‌های آنلاین، سامانه‌های اتوماسیون سازمانی، سیستم‌های نوبت‌دهی و رهگیری سفارش با معماری مقیاس‌پذیر و پایدار.
+            </p>
+            <div class="flex justify-end pt-4 mt-4 border-t border-neutral-200 dark:border-white/10">
+              <button onclick="closeModal()" class="px-6 py-2 rounded-xl text-sm font-semibold bg-bento-lavender text-white">بستن</button>
+            </div>
+          </div>
+        `;
+        document.getElementById('modal-container').classList.remove('hidden');
+        document.getElementById('modal-container').classList.add('flex');
+      }
+
+      function closeModal() {
+        document.getElementById('modal-container').classList.add('hidden');
+        document.getElementById('modal-container').classList.remove('flex');
+      }
+      window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+      // Client Brands cycle
+      const clientList = [
+        { domain: "gadgetiran.com", name: "گجت ایران", icon: "🛒" },
+        { domain: "bakhshi.shop", name: "بخشی شاپ", icon: "🛍️" },
+        { domain: "melltech.co", name: "مل‌تک", icon: "💻" },
+        { domain: "manestar.ir", name: "مانستار", icon: "🌐" },
+        { domain: "tamiratoos.com", name: "تعمیراتوس", icon: "🔧" }
+      ];
+      let clientIdx = 0;
+      function cycleClient() {
+        clientIdx = (clientIdx + 1) % clientList.length;
+        const c = clientList[clientIdx];
+        document.getElementById('client-domain-name').textContent = c.domain;
+        document.getElementById('client-brand-name').textContent = c.name;
+        document.getElementById('client-domain-icon').textContent = c.icon;
+      }
+
+      // Copy Email Toast
+      function copyEmail() {
+        navigator.clipboard.writeText("feizi.yousef@gmail.com");
+        const fb = document.getElementById('copy-feedback');
+        fb.textContent = "✓ کپی شد!";
+        setTimeout(() => { fb.textContent = "↗"; }, 2500);
+      }
+
+      // Dark / Light Theme Toggle
+      function toggleTheme() {
+        const root = document.documentElement;
+        const isDark = root.classList.contains('dark');
+        if (isDark) {
+          root.classList.remove('dark');
+          localStorage.setItem('portfolio_theme', 'light');
+          document.getElementById('theme-icon').innerHTML = '<svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+        } else {
+          root.classList.add('dark');
+          localStorage.setItem('portfolio_theme', 'dark');
+          document.getElementById('theme-icon').innerHTML = '<svg class="w-4 h-4 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>';
+        }
+      }
+
+      // Language Switcher (FA / EN)
+      function setLang(lang) {
+        const root = document.documentElement;
+        if (lang === 'en') {
+          root.setAttribute('dir', 'ltr');
+          root.setAttribute('lang', 'en');
+          document.getElementById('btn-lang-en').className = "px-2.5 py-1 rounded-full bg-bento-lavender text-white shadow-sm transition-colors";
+          document.getElementById('btn-lang-fa').className = "px-2.5 py-1 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors";
+          document.getElementById('nav-brand-name').textContent = "Yousef Feizi";
+          document.getElementById('nav-status').textContent = "Available for projects";
+          document.getElementById('nav-contact').textContent = "Get in Touch";
+          document.getElementById('hero-greeting').textContent = "Im,";
+          document.getElementById('hero-name').textContent = "Yousef Feizi";
+          document.getElementById('hero-role').textContent = "Software Engineer & Web Developer";
+          document.getElementById('link-portfolio').textContent = "Portfolio";
+          document.getElementById('link-skills').textContent = "Skills";
+          document.getElementById('link-projects').textContent = "Live Sites";
+          document.getElementById('label-about-me').textContent = "About Me";
+        } else {
+          root.setAttribute('dir', 'rtl');
+          root.setAttribute('lang', 'fa');
+          document.getElementById('btn-lang-fa').className = "px-2.5 py-1 rounded-full bg-bento-lavender text-white shadow-sm transition-colors";
+          document.getElementById('btn-lang-en').className = "px-2.5 py-1 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors";
+          document.getElementById('nav-brand-name').textContent = "یوسف فیضی";
+          document.getElementById('nav-status').textContent = "آماده همکاری در پروژه‌ها";
+          document.getElementById('nav-contact').textContent = "ارتباط با من";
+          document.getElementById('hero-greeting').textContent = "من،";
+          document.getElementById('hero-name').textContent = "یوسف فیضی";
+          document.getElementById('hero-role').textContent = "مهندس نرم‌افزار و توسعه‌دهنده وب";
+          document.getElementById('link-portfolio').textContent = "نمونه‌کارها";
+          document.getElementById('link-skills').textContent = "مهارت‌ها";
+          document.getElementById('link-projects').textContent = "سایت‌های فعال";
+          document.getElementById('label-about-me').textContent = "درباره من";
+        }
+      }
+    </script>
+  </body>
+</html>
